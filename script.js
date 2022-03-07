@@ -40,7 +40,7 @@ function userInput () {
     do {
       
       var alert = "How many characters would you like in your password?";
-      var passCharCount = parseInt(prompt(alert, 'Please select a number between 8 and 20'));
+      passCharCount = parseInt(prompt(alert, 'Please select a number between 8 and 20'));
       
       // Accepts/Rejects outside numerical range
       if (passCharCount < 8 || passCharCount > 20) {
@@ -128,6 +128,7 @@ console.log(purgeArrays);
 
 function generatePassword() {
   userInput();
+  // finalCharCount = askCharCount(); 
  // This will be the password
  finalResult = "";
 
@@ -150,3 +151,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
