@@ -10,19 +10,17 @@ var passCharCount;
 var upperCaseChars = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ];
 
 // Work Begins here..
-
 // Creating additional global variables
 var lowerCaseChars = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
 var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 ];
 var specials = [ "!", "@", "#", "$", "&"]; 
 
+// Merge or Perge? Variables determined by the UI will be stored here. 
 var mergeArrays = [];
 var purgeArrays = [];
 
 // User Interface
 function userInput () {
-
-  // User response will determine which destination an array will merge.
 
   // Executable functions
   askCharCount();
@@ -58,19 +56,15 @@ function userInput () {
         return passCharCount;
       }
 
-      // //Parsing variable
-      // passCharCount = parseInt(passCharCount);
-
     } while (passCharCount < 8 || passCharCount > 20 || regex.test(passCharCount) || !passCharCount);
-    // return passCharCount;
   }
 
 
-  //Asks if uppercare will be used. Provided by instructor..
+  //Asks if Uppercase will be used. Provided by instructor..
   function askUppercase(){
     allowUpperCase = confirm("Are upper case characters allowed?");
     console.log(allowUpperCase);
-    // additional code provided by author
+    // Additional code provided by author
     if (allowUpperCase) {
       mergeArrays.push(...upperCaseChars);
       return mergeArrays;
@@ -120,16 +114,10 @@ function userInput () {
   }
 }
 
-// Logging
-console.log(mergeArrays);
-console.log(purgeArrays);
-
 // This function creates the password..
 
 function generatePassword() {
-  userInput();
-  // finalCharCount = askCharCount(); 
- // This will be the password
+ userInput();
  finalResult = "";
 
   // Creates Password
@@ -137,7 +125,7 @@ function generatePassword() {
     var randGen = Math.floor(Math.random() * (mergeArrays.length - 1));
     finalResult += mergeArrays[randGen];
   }
-  console.log(finalResult);
+  
   return finalResult;
 }
 
